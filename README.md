@@ -28,8 +28,8 @@ Testing what can / cannot be removed (assuming setup of TypeScript, Styled Compo
 - [✕] .npmrc --> configuration file for NPM, defines the settings on how NPM should behave when running commands
 - [✕] .nvmrc --> specify which node version the project should use
 - [✓] .prettierrc --> config for prettier, this is entirely subjective so up to you (i use prettier settings in vs code)
-- [ ] .travis.yml
-- [ ] app.json
+- [✓] .travis.yml --> config file for Travis CI (a hosted continuous integration service)
+- [✓] app.json --> unsure, not used anywhere
 - [✕] gatsby-config.js --> will convert to typescript later on
 - [✕] gatsby-node.js --> will convert to typescript later on
 - [✕] LICENSE --> ok to leave, no harm
