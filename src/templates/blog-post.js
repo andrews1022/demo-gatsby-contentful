@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
-import Seo from '../components/seo';
-import Layout from '../components/layout';
-import Hero from '../components/hero';
-import Tags from '../components/tags';
+// components
+import Hero from '../components/Hero';
+import Layout from '../components/Layout';
+import Seo from '../components/Seo';
+import Tags from '../components/Tags/tags';
+
 import * as styles from './blog-post.module.css';
 
 const BlogPostTemplate = ({ data, location }) => {
