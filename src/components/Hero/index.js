@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-import * as styles from './hero.module.css';
+import * as styles from './styles.module.css';
 
 const Hero = ({ image, title, content }) => (
 	<div className={styles.hero}>

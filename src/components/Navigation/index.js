@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import * as styles from './navigation.module.css';
+import * as styles from './styles.module.css';
 
 const Navigation = () => (
 	<nav role='navigation' className={styles.container} aria-label='Main'>
