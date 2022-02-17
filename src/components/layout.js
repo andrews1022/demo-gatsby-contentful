@@ -6,19 +6,15 @@ import Seo from './seo';
 import Navigation from './navigation';
 import Footer from './footer';
 
-class Template extends React.Component {
-	render() {
-		const { children } = this.props;
+const Layout = ({ children, location }) => {
+	return (
+		<>
+			<Seo />
+			<Navigation />
+			<main className='test'>{children}</main>
+			<Footer />
+		</>
+	);
+};
 
-		return (
-			<>
-				<Seo />
-				<Navigation />
-				<main>{children}</main>
-				<Footer />
-			</>
-		);
-	}
-}
-
-export default Template;
+export default Layout;
