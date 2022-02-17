@@ -18,7 +18,7 @@ const ArticlePreview = ({ posts }) => {
             <li key={post.slug}>
               <Link to={`/blog/${post.slug}`} className={styles.link}>
                 <GatsbyImage alt="" image={post.heroImage.gatsbyImageData} />
-                <h2 className={styles.title}>{post.title}</h2>
+                <h2 className={styles.title}>{post.title}!!</h2>
               </Link>
               <div
                 dangerouslySetInnerHTML={{
