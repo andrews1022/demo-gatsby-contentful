@@ -8,29 +8,34 @@ Gatsby page [here](https://www.gatsbyjs.com/starters/contentful/starter-gatsby-b
 
 ## Post Intall Cleanup Checklist
 
-Testing what can / cannot be removed (assuming setup of TypeScript, Styled Components, Contentful, and Gatsby Cloud):
+Testing what can / cannot be removed (assuming setup of TypeScript, Styled Components, Contentful, and Gatsby Cloud) after step 'Testing the Workflow Pt. 2 - Simple Contentful Change':
 
 ✓ --> CAN be removed
 
 ✕ --> CANNOT be removed
 
-- [✓] /bin & package.json scripts
-- [ ] /contentful
-- [ ] \_config.yml
-- [ ] .babelrc
-- [ ] .contentful.json.sample
-- [ ] .gitignore
+- [✓] .cache --> can be deleted, but is regenerated each time you rebuild, and is ignored by git anyways
+- [✓] /bin & package.json scripts --> used for running `npm run dev` to setup contentful
+- [✓] /contentful --> used for running `npm run dev` to setup contentful
+- [✓] /node_modules --> can be deleted, but is regenerated each time you install packages, and is ignored by git anyways
+- [✓] /public --> can be deleted, but is regenerated each time you rebuild, and is ignored by git anyways
+- [✕] /src --> essential
+- [✕] /static --> used to house files like robots.txt
+- [✓] \_config.yml --> used for GitHub pages
+- [✕] .babelrc --> babel config file
+- [✓] .contentful.json.sample --> sample contentful data file
+- [✕] .gitignore --> used to intentionally ignore/not track specific files/folders
 - [ ] .npmrc
 - [ ] .nvmrc
-- [ ] .prettierrc
+- [✓] .prettierrc
 - [ ] .travis.yml
 - [ ] app.json
-- [ ] gatsby-config.js
-- [ ] gatsby-node.js
-- [ ] LICENSE
-- [ ] package-lock.json
-- [ ] package.json
-- [ ] README.md
-- [ ] screenshot.png
+- [✕] gatsby-config.js --> will convert to typescript later on
+- [✕] gatsby-node.js --> will convert to typescript later on
+- [✕] LICENSE --> ok to leave, no harm
+- [✓] package-lock.json --> can be deleted, but is regenerated each time you install packages
+- [✕] package.json --> essential
+- [✕] README.md --> essential
+- [✓] screenshot.png --> was used in the README, no longer needed
 - [ ] static.json
-- [ ] WHATS-NEXT.md
+- [✓] WHATS-NEXT.md --> Simple markdown file
