@@ -45,9 +45,9 @@
     "build": "gatsby build",
     "heroku-postbuild": "gatsby build",
     "serve": "gatsby serve",
-    "postinstall": "node ./bin/hello.js",
-    "setup": "node ./bin/setup.js",
     "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p"
+    "netlify:deploy": "netlify deploy -d public -p",
+    "refresh": "rm -rf .cache node_modules public package-lock.json && npm install && npm run develop",
+    "rebuild": "rm -rf .cache public && npm run dev"
   }
 }
