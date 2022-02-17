@@ -25,9 +25,9 @@ Testing what can / cannot be removed (assuming setup of TypeScript, Styled Compo
 - [✕] .babelrc --> babel config file
 - [✓] .contentful.json.sample --> sample contentful data file
 - [✕] .gitignore --> used to intentionally ignore/not track specific files/folders
-- [ ] .npmrc
-- [ ] .nvmrc
-- [✓] .prettierrc
+- [✕] .npmrc --> configuration file for NPM, defines the settings on how NPM should behave when running commands
+- [✕] .nvmrc --> specify which node version the project should use
+- [✓] .prettierrc --> config for prettier, this is entirely subjective so up to you (i use prettier settings in vs code)
 - [ ] .travis.yml
 - [ ] app.json
 - [✕] gatsby-config.js --> will convert to typescript later on
