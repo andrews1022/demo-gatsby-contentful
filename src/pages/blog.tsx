@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import type { PageProps } from 'gatsby';
 
 // components
 import ArticlePreview from '../components/ArticlePreview';
@@ -7,7 +8,16 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 
-const BlogIndex = ({ data, location }) => {
+// types
+import type { BlogPost } from '../types/types';
+
+type GraphQLResult = {
+	allContentfulBlogPost: {
+		nodes: BlogPost[];
+	};
+};
+
+const BlogIndex = ({ data, location }: PageProps<GraphQLResult>) => {
 	const posts = data.allContentfulBlogPost.nodes;
 
 	return (

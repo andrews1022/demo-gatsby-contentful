@@ -1,10 +1,11 @@
 import React from 'react';
 
 import Container from '../Container';
+
 import * as styles from './styles.module.css';
 
 const Footer = () => (
-	<Container as='footer'>
+	<Container>
 		<div className={styles.container}>
 			Built with <a href='https://contentful.com/'>Contentful</a> and{' '}
 			<a href='https://gatsbyjs.com'>Gatsby</a> &middot;{' '}

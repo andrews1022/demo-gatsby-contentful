@@ -1,4 +1,6 @@
 import React from 'react';
+import type { ReactNode } from 'react';
+import type { WindowLocation } from '@reach/router';
 
 import '../variables.css';
 import '../global.css';
@@ -8,7 +10,12 @@ import Footer from '../Footer';
 import Navigation from '../Navigation';
 import Seo from '../Seo';
 
-const Layout = ({ children, location }) => {
+type LayoutProps = {
+	children: ReactNode;
+	location: WindowLocation;
+};
+
+const Layout = ({ children, location }: LayoutProps) => {
 	return (
 		<>
 			<Seo />

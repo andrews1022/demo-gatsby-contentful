@@ -3,10 +3,19 @@ import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Container from '../Container';
-import Tags from '../Tags/tags';
+import Tags from '../Tags';
+
 import * as styles from './article-preview.module.css';
 
-const ArticlePreview = ({ posts }) => {
+// types
+import type { BlogPost } from '../../types/types';
+
+// props
+type ArticlePreviewProps = {
+	posts: BlogPost[];
+};
+
+const ArticlePreview = ({ posts }: ArticlePreviewProps) => {
 	if (!posts) return null;
 	if (!Array.isArray(posts)) return null;
 
@@ -29,7 +38,8 @@ const ArticlePreview = ({ posts }) => {
 
 							<div className={styles.meta}>
 								<small className='meta'>{post.publishDate}</small>
-								<Tags tags={post.tags} />
+
+								{post.tags.length ? <Tags tags={post.tags} /> : null}
 							</div>
 						</li>
 					);

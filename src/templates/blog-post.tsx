@@ -1,26 +1,34 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import type { PageProps } from 'gatsby';
 
 // components
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Seo from '../components/Seo';
-import Tags from '../components/Tags/tags';
+import Tags from '../components/Tags';
 
 import * as styles from './blog-post.module.css';
 
-const BlogPostTemplate = ({ data, location }) => {
+// types
+import type { NextPrevious, SingleBlogPost } from '../types/types';
+
+type GraphQLResult = {
+	contentfulBlogPost: SingleBlogPost;
+	next: NextPrevious;
+	previous: NextPrevious;
+};
+
+const BlogPostTemplate = ({ data, location }: PageProps<GraphQLResult>) => {
+	console.log('DATA: ', data);
+
 	const post = data.contentfulBlogPost;
 	const previous = data.previous;
 	const next = data.next;
 
 	return (
 		<Layout location={location}>
-			<Seo
-				title={post.title}
-				description={post.description.childMarkdownRemark.excerpt}
-				image={`http:${post.heroImage.resize.src}`}
-			/>
+			<Seo title={post.title} description={post.description.childMarkdownRemark.excerpt} />
 			<Hero
 				image={post.heroImage?.gatsbyImageData}
 				title={post.title}
@@ -40,7 +48,7 @@ const BlogPostTemplate = ({ data, location }) => {
 						}}
 					/>
 
-					<Tags tags={post.tags} />
+					{post.tags.length ? <Tags tags={post.tags} /> : null}
 
 					{(previous || next) && (
 						<nav>

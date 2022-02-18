@@ -1,12 +1,25 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import type { PageProps } from 'gatsby';
 
 // components
 import ArticlePreview from '../components/ArticlePreview';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 
-const Home = ({ data, location }) => {
+// types
+import { BlogPost, Person } from '../types/types';
+
+type GraphQLResult = {
+	allContentfulBlogPost: {
+		nodes: BlogPost[];
+	};
+	allContentfulPerson: {
+		nodes: Person[];
+	};
+};
+
+const Home = ({ data, location }: PageProps<GraphQLResult>) => {
 	const posts = data.allContentfulBlogPost.nodes;
 	const [author] = data.allContentfulPerson.nodes;
 
