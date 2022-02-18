@@ -8,18 +8,32 @@
 		"url": "https://github.com/contentful/starter-gatsby-blog/issues"
 	},
 	"dependencies": {
+		"@types/node": "^17.0.18",
+		"@types/react": "^17.0.39",
+		"@types/react-dom": "^17.0.11",
 		"@types/react-helmet": "^6.1.5",
+		"@types/styled-components": "^5.1.23",
+		"@typescript-eslint/eslint-plugin": "^5.12.0",
+		"@typescript-eslint/parser": "^5.12.0",
 		"concurrently": "^7.0.0",
+		"eslint": "^7.32.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-jsx-a11y": "^6.5.1",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
 		"gatsby": "^4.0.0",
 		"gatsby-plugin-image": "^2.0.0",
 		"gatsby-plugin-react-helmet": "^5.0.0",
 		"gatsby-plugin-sharp": "^4.0.0",
+		"gatsby-plugin-styled-components": "^5.7.0",
 		"gatsby-source-contentful": "^6.1.4",
 		"gatsby-transformer-remark": "^5.0.0",
 		"gatsby-transformer-sharp": "^4.0.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-helmet": "^6.1.0",
+		"styled-components": "^5.3.3",
 		"typescript": "^4.5.5"
 	},
 	"engines": {
@@ -46,15 +60,5 @@
 		"rebuild": "rm -rf .cache public && npm run dev",
 		"serve": "gatsby serve",
 		"troubleshoot": "rm -rf .cache node_modules public package-lock.json && npm i && npm run dev"
-	},
-	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.12.0",
-		"@typescript-eslint/parser": "^5.12.0",
-		"eslint": "^7.32.0",
-		"eslint-config-airbnb": "^19.0.4",
-		"eslint-plugin-import": "^2.25.4",
-		"eslint-plugin-jsx-a11y": "^6.5.1",
-		"eslint-plugin-react": "^7.28.0",
-		"eslint-plugin-react-hooks": "^4.3.0"
 	}
 }

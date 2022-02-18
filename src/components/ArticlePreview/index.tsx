@@ -2,8 +2,12 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
+// components
 import Container from '../Container';
 import Tags from '../Tags';
+
+// styled components
+import * as S from './styles';
 
 import * as styles from './article-preview.module.css';
 
@@ -21,7 +25,7 @@ const ArticlePreview = ({ posts }: ArticlePreviewProps) => {
 
 	return (
 		<Container>
-			<ul className={styles.articleList}>
+			<S.ArticleList>
 				{posts.map((post) => (
 					<li key={post.slug}>
 						<Link to={`/blog/${post.slug}`} className={styles.link}>
@@ -38,7 +42,7 @@ const ArticlePreview = ({ posts }: ArticlePreviewProps) => {
 						</div>
 					</li>
 				))}
-			</ul>
+			</S.ArticleList>
 		</Container>
 	);
 };
