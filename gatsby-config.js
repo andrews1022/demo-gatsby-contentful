@@ -29,6 +29,9 @@ if (!spaceId || !accessToken) {
 }
 
 module.exports = {
+	flags: {
+		DEV_SSR: false
+	},
 	siteMetadata: {
 		title: 'Gatsby Contentful Starter',
 		description: 'Official Contentful Gatsby Starter'

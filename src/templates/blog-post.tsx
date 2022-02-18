@@ -20,11 +20,9 @@ type GraphQLResult = {
 };
 
 const BlogPostTemplate = ({ data, location }: PageProps<GraphQLResult>) => {
-	console.log('DATA: ', data);
-
 	const post = data.contentfulBlogPost;
-	const previous = data.previous;
-	const next = data.next;
+	const { previous } = data;
+	const { next } = data;
 
 	return (
 		<Layout location={location}>
@@ -43,9 +41,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<GraphQLResult>) => {
 				<div className={styles.article}>
 					<div
 						className={styles.body}
-						dangerouslySetInnerHTML={{
-							__html: post.body?.childMarkdownRemark?.html
-						}}
+						dangerouslySetInnerHTML={{ __html: post.body?.childMarkdownRemark?.html }}
 					/>
 
 					{post.tags.length ? <Tags tags={post.tags} /> : null}

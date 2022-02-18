@@ -2,10 +2,15 @@ import * as React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+type Meta = {
+	name: string;
+	content: string;
+};
+
 type SeoProps = {
 	description?: string;
 	lang?: string;
-	meta?: { name: string; content: string }[];
+	meta?: Meta[];
 	title: string;
 };
 
@@ -28,9 +33,7 @@ const Seo = ({ title, description = '', lang = 'en', meta = [] }: SeoProps) => {
 
 	return (
 		<Helmet
-			htmlAttributes={{
-				lang
-			}}
+			htmlAttributes={{ lang }}
 			title={title}
 			defaultTitle={defaultTitle}
 			titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
