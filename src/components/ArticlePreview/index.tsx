@@ -22,28 +22,22 @@ const ArticlePreview = ({ posts }: ArticlePreviewProps) => {
 	return (
 		<Container>
 			<ul className={styles.articleList}>
-				{posts.map((post) => {
-					return (
-						<li key={post.slug}>
-							<Link to={`/blog/${post.slug}`} className={styles.link}>
-								<GatsbyImage alt='' image={post.heroImage.gatsbyImageData} />
-								<h2 className={styles.title}>{post.title}</h2>
-							</Link>
+				{posts.map((post) => (
+					<li key={post.slug}>
+						<Link to={`/blog/${post.slug}`} className={styles.link}>
+							<GatsbyImage alt='' image={post.heroImage.gatsbyImageData} />
+							<h2 className={styles.title}>{post.title}</h2>
+						</Link>
 
-							<div
-								dangerouslySetInnerHTML={{
-									__html: post.description.childMarkdownRemark.html
-								}}
-							/>
+						<div dangerouslySetInnerHTML={{ __html: post.description.childMarkdownRemark.html }} />
 
-							<div className={styles.meta}>
-								<small className='meta'>{post.publishDate}</small>
+						<div className={styles.meta}>
+							<small className='meta'>{post.publishDate}</small>
 
-								{post.tags.length ? <Tags tags={post.tags} /> : null}
-							</div>
-						</li>
-					);
-				})}
+							{post.tags.length ? <Tags tags={post.tags} /> : null}
+						</div>
+					</li>
+				))}
 			</ul>
 		</Container>
 	);

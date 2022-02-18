@@ -6,16 +6,14 @@ type TagsProps = {
 	tags: string[];
 };
 
-const Tags = ({ tags }: TagsProps) => {
-	return (
-		<small className={styles.tags}>
-			{tags.map((tag) => (
-				<div key={tag} className={styles.tag}>
-					{tag}
-				</div>
-			))}
-		</small>
-	);
-};
+const Tags = ({ tags }: TagsProps) => (
+	<small className={styles.tags}>
+		{tags.map((tag) => (
+			<div key={tag} className={styles.tag}>
+				{tag}
+			</div>
+		))}
+	</small>
+);
 
 export default Tags;

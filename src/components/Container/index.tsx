@@ -6,18 +6,16 @@ type ContainerProps = {
 	children: ReactNode;
 };
 
-const Container = ({ children }: ContainerProps) => {
-	return (
-		<div
-			style={{
-				maxWidth: 'var(--size-max-width)',
-				margin: '0 auto',
-				padding: 'var(--space-2xl) var(--size-gutter)'
-			}}
-		>
-			{children}
-		</div>
-	);
-};
+const Container = ({ children }: ContainerProps) => (
+	<div
+		style={{
+			maxWidth: 'var(--size-max-width)',
+			margin: '0 auto',
+			padding: 'var(--space-2xl) var(--size-gutter)'
+		}}
+	>
+		{children}
+	</div>
+);
 
 export default Container;

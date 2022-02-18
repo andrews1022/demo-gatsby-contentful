@@ -15,15 +15,13 @@ type LayoutProps = {
 	location: WindowLocation;
 };
 
-const Layout = ({ children, location }: LayoutProps) => {
-	return (
-		<>
-			<Seo />
-			<Navigation />
-			<main className='test'>{children}</main>
-			<Footer />
-		</>
-	);
-};
+const Layout = ({ children, location }: LayoutProps) => (
+	<>
+		<Seo title='Gatsby Contentful Blog w/ TypeScript' />
+		<Navigation />
+		<main className='test'>{children}</main>
+		<Footer />
+	</>
+);
 
 export default Layout;

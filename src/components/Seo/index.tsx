@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 type SeoProps = {
 	description?: string;
 	lang?: string;
-	meta?: Array<{ name: string; content: string }>;
+	meta?: { name: string; content: string }[];
 	title: string;
 };
 

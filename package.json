@@ -46,5 +46,15 @@
 		"rebuild": "rm -rf .cache public && npm run dev",
 		"serve": "gatsby serve",
 		"troubleshoot": "rm -rf .cache node_modules public package-lock.json && npm i && npm run dev"
+	},
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.12.0",
+		"@typescript-eslint/parser": "^5.12.0",
+		"eslint": "^7.32.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-jsx-a11y": "^6.5.1",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0"
 	}
 }
