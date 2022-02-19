@@ -1,12 +1,22 @@
-const path = require('path');
+import { resolve } from 'path';
+import type { GatsbyNode } from 'gatsby';
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+type GraphQLResult = {
+	allContentfulBlogPost: {
+		nodes: {
+			slug: string;
+			title: string;
+		}[];
+	};
+};
+
+export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions, reporter }) => {
 	const { createPage } = actions;
 
 	// Define a template for blog post
-	const blogPost = path.resolve('./src/templates/blog-post.tsx');
+	const blogPost = resolve('./src/templates/blog-post.tsx');
 
-	const result = await graphql(
+	const result = await graphql<GraphQLResult>(
 		`
 			{
 				allContentfulBlogPost {
@@ -24,11 +34,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 		return;
 	}
 
+	if (!result.data) {
+		throw new Error('Failed to get posts.');
+	}
+
 	const posts = result.data.allContentfulBlogPost.nodes;
 
-	// Create blog posts pages
-	// But only if there's at least one blog post found in Contentful
-	// `context` is available in the template as a prop and as a variable in GraphQL
 	if (posts.length > 0) {
 		posts.forEach((post, index) => {
 			const previousPostSlug = index === 0 ? null : posts[index - 1].slug;
@@ -39,6 +50,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 				component: blogPost,
 				context: {
 					slug: post.slug,
+					title: post.title,
 					previousPostSlug,
 					nextPostSlug
 				}
