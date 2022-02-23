@@ -8,7 +8,9 @@ import Layout from '../components/Layout';
 import Seo from '../components/Seo';
 import Tags from '../components/Tags';
 
-import * as styles from './blog-post.module.css';
+// styled components
+import * as S from './styles';
+import { Container } from '../components/UI/Container';
 
 // types
 import type { NextPrevious, SingleBlogPost } from '../types/types';
@@ -27,28 +29,27 @@ const BlogPostTemplate = ({ data, location }: PageProps<GraphQLResult>) => {
 	return (
 		<Layout location={location}>
 			<Seo title={post.title} description={post.description.childMarkdownRemark.excerpt} />
+
 			<Hero
 				image={post.heroImage?.gatsbyImageData}
 				title={post.title}
 				content={post.description?.childMarkdownRemark?.excerpt}
 			/>
-			<div className={styles.container}>
-				<span className={styles.meta}>
+
+			<Container>
+				<S.Meta>
 					{post.author?.name} &middot; <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
 					{post.body?.childMarkdownRemark?.timeToRead} minute read
-				</span>
+				</S.Meta>
 
-				<div className={styles.article}>
-					<div
-						className={styles.body}
-						dangerouslySetInnerHTML={{ __html: post.body?.childMarkdownRemark?.html }}
-					/>
+				<S.Article>
+					<S.Body dangerouslySetInnerHTML={{ __html: post.body?.childMarkdownRemark?.html }} />
 
 					{post.tags.length ? <Tags tags={post.tags} /> : null}
 
 					{(previous || next) && (
-						<nav>
-							<ul className={styles.articleNavigation}>
+						<S.Navigation>
+							<ul>
 								{previous && (
 									<li>
 										<Link to={`/blog/${previous.slug}`} rel='prev'>
@@ -64,10 +65,10 @@ const BlogPostTemplate = ({ data, location }: PageProps<GraphQLResult>) => {
 									</li>
 								)}
 							</ul>
-						</nav>
+						</S.Navigation>
 					)}
-				</div>
-			</div>
+				</S.Article>
+			</Container>
 		</Layout>
 	);
 };

@@ -7,6 +7,7 @@ type Meta = {
 	content: string;
 };
 
+// props
 type SeoProps = {
 	description?: string;
 	lang?: string;

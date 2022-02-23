@@ -1,10 +1,9 @@
 import React from 'react';
-import type { ReactNode } from 'react';
-import type { WindowLocation } from '@reach/router';
 import { ThemeProvider } from 'styled-components';
 
-import '../variables.css';
-import '../global.css';
+// types
+import type { ReactNode } from 'react';
+import type { WindowLocation } from '@reach/router';
 
 // components
 import Footer from '../Footer';
@@ -15,6 +14,7 @@ import Seo from '../Seo';
 import GlobalStyle from '../../styles/GlobalStyle';
 import theme from '../../styles/theme';
 
+// props
 type LayoutProps = {
 	children: ReactNode;
 	location: WindowLocation;

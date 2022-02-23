@@ -2,11 +2,11 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
 // components
-import Container from '../Container';
 import Tags from '../Tags';
 
 // styled components
 import * as S from './styles';
+import { Container } from '../UI/Container';
 
 // types
 import type { BlogPost } from '../../types/types';
