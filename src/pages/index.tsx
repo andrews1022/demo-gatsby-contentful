@@ -8,7 +8,7 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 
 // types
-import { BlogPost, Person } from '../types/types';
+import type { BlogPost, Person } from '../types/types';
 
 type GraphQLResult = {
 	allContentfulBlogPost: {

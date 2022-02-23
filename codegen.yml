@@ -1,0 +1,15 @@
+schema: http://localhost:8000/___graphql
+documents:
+  - ./src/**/*.{ts,tsx}
+  - ./node_modules/gatsby*/!(node_modules)/**/*.js
+generates:
+  ./src/types/graphql-types.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+    config:
+      avoidOptionals: true
+      maybeValue: T
+      inputMaybeValue: T
+      namingConvention:
+        enumValues: 'keep'

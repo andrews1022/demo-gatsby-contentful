@@ -8,6 +8,9 @@
 		"url": "https://github.com/contentful/starter-gatsby-blog/issues"
 	},
 	"dependencies": {
+		"@graphql-codegen/cli": "^2.6.2",
+		"@graphql-codegen/typescript": "^2.4.5",
+		"@graphql-codegen/typescript-operations": "^2.3.2",
 		"@types/node": "^17.0.18",
 		"@types/react": "^17.0.39",
 		"@types/react-dom": "^17.0.11",
@@ -33,6 +36,7 @@
 		"gatsby-source-contentful": "^6.1.4",
 		"gatsby-transformer-remark": "^5.0.0",
 		"gatsby-transformer-sharp": "^4.0.0",
+		"graphql": "^15.8.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-helmet": "^6.1.0",
@@ -59,6 +63,8 @@
 	"scripts": {
 		"build": "gatsby build",
 		"clean": "gatsby clean",
+		"codegen": "graphql-codegen --config codegen.yml",
+		"codegen-watch": "graphql-codegen --config codegen.yml --watch",
 		"dev-gatsby": "gatsby develop",
 		"dev-typescript": "tsc -w",
 		"dev": "concurrently \"npm:dev-gatsby\" \"npm:dev-typescript\"",
