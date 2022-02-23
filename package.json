@@ -64,11 +64,9 @@
 		"build": "gatsby build",
 		"clean": "gatsby clean",
 		"codegen": "graphql-codegen --config codegen.yml",
-		"codegen-watch": "graphql-codegen --config codegen.yml --watch",
 		"dev-gatsby": "gatsby develop",
 		"dev-typescript": "tsc -w",
-		"dev": "concurrently \"npm:dev-gatsby\" \"npm:dev-typescript\"",
-		"rebuild": "rm -rf .cache public && npm run dev",
+		"dev": "npm run clean && concurrently \"npm:dev-gatsby\" \"npm:dev-typescript\"",
 		"serve": "gatsby serve",
 		"troubleshoot": "rm -rf .cache node_modules public package-lock.json && npm i && npm run dev"
 	}
