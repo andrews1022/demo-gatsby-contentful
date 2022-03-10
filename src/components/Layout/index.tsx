@@ -16,18 +16,18 @@ import theme from '../../styles/theme';
 
 // props
 type LayoutProps = {
-	children: ReactNode;
-	location: WindowLocation;
+  children: ReactNode;
+  location: WindowLocation;
 };
 
 const Layout = ({ children, location }: LayoutProps) => (
-	<ThemeProvider theme={theme}>
-		<GlobalStyle />
-		<Seo title='Gatsby Contentful Blog w/ TypeScript' />
-		<Navigation />
-		<main className='test'>{children}</main>
-		<Footer />
-	</ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <Seo title='Gatsby Contentful Blog w/ TypeScript' />
+    <Navigation />
+    <main className='test'>{children}</main>
+    <Footer />
+  </ThemeProvider>
 );
 
 export default Layout;

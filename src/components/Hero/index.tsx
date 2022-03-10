@@ -6,21 +6,21 @@ import * as S from './styles';
 
 // props
 type HeroProps = {
-	content?: string;
-	image?: IGatsbyImageData;
-	title: string;
+  content?: string;
+  image?: IGatsbyImageData;
+  title: string;
 };
 
 const Hero = ({ content, image, title }: HeroProps) => (
-	<S.Hero>
-		{image ? <S.Image alt={title} image={image} /> : null}
+  <S.Hero>
+    {image ? <S.Image alt={title} image={image} /> : null}
 
-		<S.Details>
-			<S.Title>{title}</S.Title>
+    <S.Details>
+      <S.Title>{title}</S.Title>
 
-			{content ? <S.Content>{content}</S.Content> : null}
-		</S.Details>
-	</S.Hero>
+      {content ? <S.Content>{content}</S.Content> : null}
+    </S.Details>
+  </S.Hero>
 );
 
 export default Hero;
