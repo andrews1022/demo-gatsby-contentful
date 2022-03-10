@@ -19,8 +19,20 @@ const Navigation = () => (
 			</S.MenuItem>
 
 			<S.MenuItem>
-				<Link to='/blog/' activeClassName='active'>
+				<Link to='/blog' activeClassName='active'>
 					Blog
+				</Link>
+			</S.MenuItem>
+
+			<S.MenuItem>
+				<Link to='/jobs' activeClassName='active'>
+					Jobs
+				</Link>
+			</S.MenuItem>
+
+			<S.MenuItem>
+				<Link to='/about-us' activeClassName='active'>
+					About Us
 				</Link>
 			</S.MenuItem>
 		</S.MenuList>
