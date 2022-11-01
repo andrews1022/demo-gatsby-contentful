@@ -1,6 +1,6 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import * as React from "react";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 type Meta = {
   name: string;
@@ -15,7 +15,7 @@ type SeoProps = {
   title: string;
 };
 
-const Seo = ({ title, description = '', lang = 'en', meta = [] }: SeoProps) => {
+const Seo = ({ title, description = "", lang = "en", meta = [] }: SeoProps) => {
   const { site } = useStaticQuery(
     graphql`
       query {

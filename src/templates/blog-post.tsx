@@ -1,19 +1,19 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
-import type { PageProps } from 'gatsby';
+import React from "react";
+import { Link, graphql } from "gatsby";
+import type { PageProps } from "gatsby";
 
 // components
-import Hero from '../components/Hero';
-import Layout from '../components/Layout';
-import Seo from '../components/Seo';
-import Tags from '../components/Tags';
+import Hero from "../components/Hero";
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
+import Tags from "../components/Tags";
 
 // styled components
-import * as S from './styles';
-import { Container } from '../components/UI/Container';
+import * as S from "./styles";
+import { Container } from "../components/UI/Container";
 
 // types
-import type { NextPrevious, SingleBlogPost } from '../types/types';
+import type { NextPrevious, SingleBlogPost } from "../types/types";
 
 type GraphQLResult = {
   contentfulBlogPost: SingleBlogPost;
@@ -21,13 +21,12 @@ type GraphQLResult = {
   previous: NextPrevious;
 };
 
-const BlogPostTemplate = ({ data, location }: PageProps<GraphQLResult>) => {
+const BlogPostTemplate = ({ data }: PageProps<GraphQLResult>) => {
   const post = data.contentfulBlogPost;
-  const { previous } = data;
-  const { next } = data;
+  const { next, previous } = data;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Seo title={post.title} description={post.description.childMarkdownRemark.excerpt} />
 
       <Hero
@@ -38,7 +37,7 @@ const BlogPostTemplate = ({ data, location }: PageProps<GraphQLResult>) => {
 
       <Container>
         <S.Meta>
-          {post.author?.name} &middot; <time dateTime={post.rawDate}>{post.publishDate}</time> –{' '}
+          {post.author?.name} &middot; <time dateTime={post.rawDate}>{post.publishDate}</time> –{" "}
           {post.body?.childMarkdownRemark?.timeToRead} minute read
         </S.Meta>
 
@@ -52,14 +51,14 @@ const BlogPostTemplate = ({ data, location }: PageProps<GraphQLResult>) => {
               <ul>
                 {previous && (
                   <li>
-                    <Link to={`/blog/${previous.slug}`} rel='prev'>
+                    <Link to={`/blog/${previous.slug}`} rel="prev">
                       ← {previous.title}
                     </Link>
                   </li>
                 )}
                 {next && (
                   <li>
-                    <Link to={`/blog/${next.slug}`} rel='next'>
+                    <Link to={`/blog/${next.slug}`} rel="next">
                       {next.title} →
                     </Link>
                   </li>

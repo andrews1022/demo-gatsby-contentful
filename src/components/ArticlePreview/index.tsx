@@ -1,15 +1,15 @@
-import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 // components
-import Tags from '../Tags';
+import Tags from "../Tags";
 
 // styled components
-import * as S from './styles';
-import { Container } from '../UI/Container';
+import * as S from "./styles";
+import { Container } from "../UI/Container";
 
 // types
-import type { BlogPost } from '../../types/types';
+import type { BlogPost } from "../../types/types";
 
 // props
 type ArticlePreviewProps = {
@@ -17,7 +17,9 @@ type ArticlePreviewProps = {
 };
 
 const ArticlePreview = ({ posts }: ArticlePreviewProps) => {
-  if (!posts || !Array.isArray(posts)) return null;
+  if (!posts || !Array.isArray(posts)) {
+    return null;
+  }
 
   return (
     <Container>
@@ -25,7 +27,7 @@ const ArticlePreview = ({ posts }: ArticlePreviewProps) => {
         {posts.map((post) => (
           <li key={post.slug}>
             <S.StyledLink to={`/blog/${post.slug}`}>
-              <GatsbyImage alt='' image={post.heroImage.gatsbyImageData} />
+              <GatsbyImage alt="" image={post.heroImage.gatsbyImageData} />
               <S.Title>{post.title}</S.Title>
             </S.StyledLink>
 

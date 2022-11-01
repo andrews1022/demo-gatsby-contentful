@@ -1,14 +1,14 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import type { PageProps } from 'gatsby';
+import React from "react";
+import { graphql } from "gatsby";
+import type { PageProps } from "gatsby";
 
 // components
-import ArticlePreview from '../components/ArticlePreview';
-import Hero from '../components/Hero';
-import Layout from '../components/Layout';
+import ArticlePreview from "../components/ArticlePreview";
+import Hero from "../components/Hero";
+import Layout from "../components/Layout";
 
 // types
-import type { BlogPost, Person } from '../types/types';
+import type { BlogPost, Person } from "../types/types";
 
 type GraphQLResult = {
   allContentfulBlogPost: {
@@ -19,12 +19,12 @@ type GraphQLResult = {
   };
 };
 
-const Home = ({ data, location }: PageProps<GraphQLResult>) => {
+const Home = ({ data }: PageProps<GraphQLResult>) => {
   const posts = data.allContentfulBlogPost.nodes;
   const [author] = data.allContentfulPerson.nodes;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Hero
         image={author.heroImage.gatsbyImageData}
         title={author.name}

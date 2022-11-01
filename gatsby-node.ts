@@ -1,1 +1,1 @@
-export * from './gatsby/gatsby-node';
+export * from "./gatsby/gatsby-node";

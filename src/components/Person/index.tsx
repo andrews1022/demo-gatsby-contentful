@@ -1,6 +1,6 @@
-import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import type { IGatsbyImageData } from 'gatsby-plugin-image';
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
+import type { IGatsbyImageData } from "gatsby-plugin-image";
 
 type PersonProps = {
   content: {
@@ -18,12 +18,12 @@ type PersonProps = {
 const Person = ({ content }: PersonProps) => {
   // console.log('Person content', content);
 
-  const styles = { border: '2px solid blue', padding: '1rem' };
+  const styles = { border: "2px solid blue", padding: "1rem" };
 
   return (
     <div style={styles}>
       <h2>{content.name}</h2>
-      <GatsbyImage image={content.image.gatsbyImageData} alt='contentful demo' />
+      <GatsbyImage image={content.image.gatsbyImageData} alt="contentful demo" />
     </div>
   );
 };

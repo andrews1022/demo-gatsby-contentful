@@ -1,8 +1,8 @@
-import React from 'react';
-import type { IGatsbyImageData } from 'gatsby-plugin-image';
+import React from "react";
+import type { IGatsbyImageData } from "gatsby-plugin-image";
 
 // styled components
-import * as S from './styles';
+import * as S from "./styles";
 
 // props
 type HeroProps = {

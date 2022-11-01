@@ -1,8 +1,8 @@
-import React, { lazy, Suspense } from 'react';
-import { graphql, PageProps } from 'gatsby';
+import React, { lazy, Suspense } from "react";
+import { graphql, PageProps } from "gatsby";
 
-import Layout from '../components/Layout';
-import { Container } from '../components/UI/Container';
+import Layout from "../components/Layout";
+import { Container } from "../components/UI/Container";
 
 type GraphQLResult = {
   contentfulDynamicPage: {
@@ -11,11 +11,11 @@ type GraphQLResult = {
   };
 };
 
-const DynamicPage = ({ data, location }: PageProps<GraphQLResult>) => {
+const DynamicPage = ({ data }: PageProps<GraphQLResult>) => {
   const { pageContent, title } = data.contentfulDynamicPage;
 
   return (
-    <Layout location={location}>
+    <Layout>
       <Container>
         <h2>This is the {title} page</h2>
 
@@ -39,8 +39,6 @@ const DynamicPage = ({ data, location }: PageProps<GraphQLResult>) => {
 };
 
 export default DynamicPage;
-
-// TRY: take data from page query below and build new query?
 
 export const pageQuery = graphql`
   query ContentfulDynamicPageQuery($id: String!) {

@@ -1,5 +1,5 @@
-import { GatsbyImage } from 'gatsby-plugin-image';
-import styled from 'styled-components';
+import { GatsbyImage } from "gatsby-plugin-image";
+import styled from "styled-components";
 
 export const Hero = styled.div`
   align-items: flex-end;

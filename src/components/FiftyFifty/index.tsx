@@ -1,6 +1,6 @@
-import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import type { IGatsbyImageData } from 'gatsby-plugin-image';
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
+import type { IGatsbyImageData } from "gatsby-plugin-image";
 
 type FiftyFiftyProps = {
   content: {
@@ -21,7 +21,7 @@ type FiftyFiftyProps = {
 const FiftyFifty = ({ content }: FiftyFiftyProps) => {
   // console.log('FiftyFifty content', content);
 
-  const styles = { border: '2px solid red', padding: '1rem' };
+  const styles = { border: "2px solid red", padding: "1rem" };
 
   return (
     <div style={styles}>
@@ -31,7 +31,7 @@ const FiftyFifty = ({ content }: FiftyFiftyProps) => {
       </div>
 
       <div>
-        <GatsbyImage image={content.image.gatsbyImageData} alt='contentful demo' />
+        <GatsbyImage image={content.image.gatsbyImageData} alt="contentful demo" />
       </div>
     </div>
   );

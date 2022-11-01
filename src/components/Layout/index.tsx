@@ -1,31 +1,29 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import React from "react";
+import { ThemeProvider } from "styled-components";
 
 // types
-import type { ReactNode } from 'react';
-import type { WindowLocation } from '@reach/router';
+import type { ReactNode } from "react";
 
 // components
-import Footer from '../Footer';
-import Navigation from '../Navigation';
-import Seo from '../Seo';
+import Footer from "../Footer";
+import Navigation from "../Navigation";
+import Seo from "../Seo";
 
 // styled components
-import GlobalStyle from '../../styles/GlobalStyle';
-import theme from '../../styles/theme';
+import GlobalStyle from "../../styles/GlobalStyle";
+import theme from "../../styles/theme";
 
 // props
 type LayoutProps = {
   children: ReactNode;
-  location: WindowLocation;
 };
 
-const Layout = ({ children, location }: LayoutProps) => (
+const Layout = ({ children }: LayoutProps) => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <Seo title='Gatsby Contentful Blog w/ TypeScript' />
+    <Seo title="Gatsby Contentful Blog w/ TypeScript" />
     <Navigation />
-    <main className='test'>{children}</main>
+    <main className="test">{children}</main>
     <Footer />
   </ThemeProvider>
 );

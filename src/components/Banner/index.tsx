@@ -1,6 +1,6 @@
-import React from 'react';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import type { IGatsbyImageData } from 'gatsby-plugin-image';
+import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
+import type { IGatsbyImageData } from "gatsby-plugin-image";
 
 type BannerProps = {
   content: {
@@ -21,14 +21,14 @@ type BannerProps = {
 const Banner = ({ content }: BannerProps) => {
   // console.log('Banner content', content);
 
-  const styles = { border: '2px solid green', padding: '1rem' };
+  const styles = { border: "2px solid green", padding: "1rem" };
 
   return (
     <div style={styles}>
       <h2>{content.title}</h2>
       <p>{content.copy.copy}</p>
 
-      <GatsbyImage image={content.backgroundImage.gatsbyImageData} alt='contentful demo' />
+      <GatsbyImage image={content.backgroundImage.gatsbyImageData} alt="contentful demo" />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Footer = styled.footer`
   border-top: 1px solid rgba(0, 0, 0, 0.05);

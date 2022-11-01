@@ -1,4 +1,4 @@
-import type { IGatsbyImageData } from 'gatsby-plugin-image';
+import type { IGatsbyImageData } from "gatsby-plugin-image";
 
 export type BlogPost = {
   title: string;

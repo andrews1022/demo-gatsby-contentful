@@ -1,15 +1,15 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import type { PageProps } from 'gatsby';
+import React from "react";
+import { graphql } from "gatsby";
+import type { PageProps } from "gatsby";
 
 // components
-import ArticlePreview from '../components/ArticlePreview';
-import Hero from '../components/Hero';
-import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+import ArticlePreview from "../components/ArticlePreview";
+import Hero from "../components/Hero";
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
 // types
-import type { BlogPost } from '../types/types';
+import type { BlogPost } from "../types/types";
 
 type GraphQLResult = {
   allContentfulBlogPost: {
@@ -17,13 +17,13 @@ type GraphQLResult = {
   };
 };
 
-const BlogIndex = ({ data, location }: PageProps<GraphQLResult>) => {
+const BlogIndex = ({ data }: PageProps<GraphQLResult>) => {
   const posts = data.allContentfulBlogPost.nodes;
 
   return (
-    <Layout location={location}>
-      <Seo title='Blog' />
-      <Hero title='Blog' />
+    <Layout>
+      <Seo title="Blog" />
+      <Hero title="Blog" />
       <ArticlePreview posts={posts} />
     </Layout>
   );

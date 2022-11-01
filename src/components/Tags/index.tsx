@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 // styled components
-import * as S from './styles';
+import * as S from "./styles";
 
 // props
 type TagsProps = {
