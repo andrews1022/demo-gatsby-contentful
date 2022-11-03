@@ -1,4 +1,4 @@
-# Contentful Gatsby Starter Blog
+# Demo: Gatsby + Contentful
 
 This is just me testing out using Contentful Gatsby Starter Blog with TypeScript & Styled Components.
 
